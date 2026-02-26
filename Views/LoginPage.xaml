@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="[http://schemas.microsoft.com/dotnet/2021/maui](http://schemas.microsoft.com/dotnet/2021/maui)"
+             xmlns:x="[http://schemas.microsoft.com/winfx/2009/xaml](http://schemas.microsoft.com/winfx/2009/xaml)"
+             x:Class="TeleCheckup.Views.LoginPage"
+             BackgroundColor="{StaticResource ElectricBlue}">
+
+    <VerticalStackLayout Spacing="25" Padding="30" VerticalOptions="Center">
+
+        <Label Text="TELE CHECKUP" FontSize="36" FontAttributes="Bold" TextColor="{StaticResource White}" HorizontalOptions="Center" />
+        <Label Text="La tua salute, ovunque tu sia." FontSize="16" TextColor="LightCyan" HorizontalOptions="Center" Margin="0,0,0,30"/>
+
+        <Frame BackgroundColor="{StaticResource White}" CornerRadius="20" Padding="20" HasShadow="True">
+            <VerticalStackLayout Spacing="15">
+                <!-- Simulazione Accessi -->
+                <Button Text="Accedi come Paziente" BackgroundColor="{StaticResource ElectricBlue}" TextColor="White" CornerRadius="10" Clicked="OnPatientLoginClicked"/>
+                <Button Text="Accedi come Medico" BackgroundColor="{StaticResource NeonYellow}" TextColor="{StaticResource DarkText}" CornerRadius="10" Clicked="OnDoctorLoginClicked"/>
+                <Button Text="Accedi come Admin" BackgroundColor="{StaticResource ElectricRed}" TextColor="White" CornerRadius="10" Clicked="OnAdminLoginClicked"/>
+            </VerticalStackLayout>
+        </Frame>
+
+    </VerticalStackLayout>
+</ContentPage>

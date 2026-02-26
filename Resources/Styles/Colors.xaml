@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ResourceDictionary 
+    xmlns="[http://schemas.microsoft.com/dotnet/2021/maui](http://schemas.microsoft.com/dotnet/2021/maui)"
+    xmlns:x="[http://schemas.microsoft.com/winfx/2009/xaml](http://schemas.microsoft.com/winfx/2009/xaml)">
+
+    <!-- La tua Palette Colori -->
+    <Color x:Key="ElectricBlue">#0033FF</Color>
+    <Color x:Key="White">#FFFFFF</Color>
+    <Color x:Key="ElectricRed">#FF0033</Color>
+    <Color x:Key="NeonYellow">#EFFF00</Color>
+    <Color x:Key="NeonGreen">#39FF14</Color>
+    <Color x:Key="DarkText">#1A1A1A</Color>
+    <Color x:Key="GrayBg">#F3F4F6</Color>
+
+</ResourceDictionary>

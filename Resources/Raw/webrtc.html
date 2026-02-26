@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WebRTC Demo</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #222; color: #fff; }
+        video { width: 45%; margin: 10px; background: #000; }
+        #videos { display: flex; justify-content: center; }
+        button { margin: 10px; padding: 10px 20px; }
+    </style>
+</head>
+<body>
+    <h2>WebRTC Video Demo</h2>
+    <div id="videos">
+        <video id="localVideo" autoplay playsinline muted></video>
+        <video id="remoteVideo" autoplay playsinline></video>
+    </div>
+    <button onclick="startCall()">Start Call</button>
+    <button onclick="hangup()">Hang Up</button>
+    <script>
+        let localStream, remoteStream, pc;
+        const servers = { iceServers: [{ urls: 'stun:stun.l.google.com:19302' }] };
+        async function startCall() {
+            localStream = await navigator.mediaDevices.getUserMedia({ video: true, audio: true });
+            document.getElementById('localVideo').srcObject = localStream;
+            pc = new RTCPeerConnection(servers);
+            localStream.getTracks().forEach(track => pc.addTrack(track, localStream));
+            pc.ontrack = event => {
+                if (!remoteStream) {
+                    remoteStream = new MediaStream();
+                    document.getElementById('remoteVideo').srcObject = remoteStream;
+                }
+                remoteStream.addTrack(event.track);
+            };
+            const offer = await pc.createOffer();
+            await pc.setLocalDescription(offer);
+            // For demo: no signaling, so can't connect to remote peer
+            alert('Offer created. In real app, send this to remote peer.');
+        }
+        function hangup() {
+            if (pc) pc.close();
+            document.getElementById('localVideo').srcObject = null;
+            document.getElementById('remoteVideo').srcObject = null;
+        }
+    </script>
+</body>
+</html>

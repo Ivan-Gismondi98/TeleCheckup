@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="TeleCheckup.AppShell"
+    xmlns="[http://schemas.microsoft.com/dotnet/2021/maui](http://schemas.microsoft.com/dotnet/2021/maui)"
+    xmlns:x="[http://schemas.microsoft.com/winfx/2009/xaml](http://schemas.microsoft.com/winfx/2009/xaml)"
+    xmlns:local="clr-namespace:TeleCheckup.Views"
+    Shell.FlyoutBehavior="Flyout"
+    Shell.NavBarHasShadow="True"
+    Title="TeleCheckup">
+
+    <Shell.FlyoutHeader>
+        <Grid BackgroundColor="{StaticResource ElectricBlue}" HeightRequest="150" Padding="20">
+            <Label Text="TELE CHECKUP" TextColor="White" FontSize="22" FontAttributes="Bold" VerticalOptions="End" />
+        </Grid>
+    </Shell.FlyoutHeader>
+
+    <!-- La pagina di Login è la prima a caricare, nascondiamo il menu hamburger qui -->
+    <ShellContent
+        Title="Login"
+        ContentTemplate="{DataTemplate local:LoginPage}"
+        Route="LoginPage"
+        Shell.FlyoutBehavior="Disabled" 
+        Shell.NavBarIsVisible="False" />
+
+    <!-- Voci del menu (visibili dopo il login) -->
+    <FlyoutItem Title="Dashboard" Icon="home_icon.png">
+        <ShellContent Route="PatientDashboardPage" ContentTemplate="{DataTemplate local:PatientDashboardPage}" />
+    </FlyoutItem>
+    
+    <FlyoutItem Title="Profilo" Icon="user_icon.png">
+        <ShellContent Route="ProfilePage" ContentTemplate="{DataTemplate local:ProfilePage}" />
+    </FlyoutItem>
+
+    <MenuItem Text="Logout" IconImageSource="logout_icon.png" Clicked="OnLogoutClicked" />
+
+</Shell>

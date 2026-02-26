@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TeleCheckup.Views.DoctorDashboardPage"
+             Title="Dashboard Medico">
+    <VerticalStackLayout Padding="20">
+        <Label Text="Dashboard Medico" FontSize="24" FontAttributes="Bold" />
+        <Label Text="Questa è una pagina di esempio." />
+    </VerticalStackLayout>
+</ContentPage>
