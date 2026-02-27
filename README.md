@@ -16,6 +16,26 @@ TeleCheckup è un'applicazione multipiattaforma sviluppata con .NET MAUI per la 
 - **AppShell.xaml**: Navigazione e routing
 - **MauiProgram.cs**: Configurazione servizi e toolkit
 
+## Integrazione Firebase
+- **Firestore:** CRUD tramite Plugin.Firebase.Firestore v4 (GetCollection, GetDocument, SetDataAsync, ecc.)
+- **Auth:** Login/registrazione tramite REST API Firebase (HttpClient)
+- **Cloud Messaging:** Gestione notifiche push (da completare)
+
+## TODO per la pubblicazione
+1. Migliorare gestione errori e validazione input
+2. Completare integrazione notifiche push (Firebase Cloud Messaging)
+3. Testare su tutte le piattaforme supportate
+4. Ottimizzare UI/UX (layout, accessibilità, responsive design)
+5. Inserire la tua API key Firebase nei punti REST
+6. Pulizia codice e refactor
+7. Aggiornare documentazione e guide
+8. Preparare icone, splash, privacy policy, build per store
+
+## Note tecniche
+- La creazione utente ora avviene tramite REST API Firebase
+- Tutte le operazioni Firestore usano Plugin.Firebase.Firestore v4
+- Per notifiche push, assicurarsi che il progetto Firebase sia configurato correttamente
+
 ## Requisiti
 - [.NET 8+ SDK](https://dotnet.microsoft.com/download)
 - Android SDK (per emulatore Android)

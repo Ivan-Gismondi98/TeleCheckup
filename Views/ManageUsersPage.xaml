@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TeleCheckup.Views.ManageUsersPage"
+             Title="Gestione Utenti">
+    <VerticalStackLayout Padding="20" Spacing="10">
+        <Label Text="Gestione Utenti" FontSize="24" FontAttributes="Bold" HorizontalOptions="Center" />
+        <Button Text="Crea Nuovo Utente" Clicked="OnCreateUserClicked" />
+        <CollectionView x:Name="UsersCollectionView" SelectionMode="None">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame BorderColor="Gray" CornerRadius="10" Padding="10" Margin="0,5">
+                        <VerticalStackLayout>
+                            <Label Text="{Binding nome}" FontAttributes="Bold" />
+                            <Label Text="{Binding email}" FontSize="12" />
+                            <Label Text="Ruolo: {Binding ruolo}" FontSize="12" />
+                            <HorizontalStackLayout Spacing="10">
+                                <Button Text="Modifica" Clicked="OnEditUserClicked" CommandParameter="{Binding .}" />
+                                <Button Text="Elimina" IsEnabled="False" />
+                            </HorizontalStackLayout>
+                        </VerticalStackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </VerticalStackLayout>
+</ContentPage>

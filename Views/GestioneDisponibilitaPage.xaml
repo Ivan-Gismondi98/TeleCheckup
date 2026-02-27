@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TeleCheckup.Views.GestioneDisponibilitaPage"
+             Title="Gestione Disponibilità">
+    <VerticalStackLayout Padding="20" Spacing="15">
+        <Label Text="Gestione Disponibilità" FontSize="24" FontAttributes="Bold" HorizontalOptions="Center" />
+        <DatePicker x:Name="StartDatePicker" Title="Data inizio" />
+        <DatePicker x:Name="EndDatePicker" Title="Data fine" />
+        <Button Text="Aggiungi intervallo" Clicked="OnAggiungiIntervalloClicked" />
+        <Label Text="Intervalli disponibili:" FontAttributes="Bold" />
+        <CollectionView x:Name="IntervalliCollectionView">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame BorderColor="Gray" CornerRadius="10" Padding="10" Margin="0,5">
+                        <HorizontalStackLayout Spacing="10">
+                            <Label Text="{Binding Start}" />
+                            <Label Text="-" />
+                            <Label Text="{Binding End}" />
+                            <Button Text="Elimina" Clicked="OnEliminaIntervalloClicked" CommandParameter="{Binding .}" />
+                        </HorizontalStackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </VerticalStackLayout>
+</ContentPage>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TeleCheckup.Views.GestioneRichiestePage"
+             Title="Gestione Richieste">
+    <VerticalStackLayout Padding="20" Spacing="15">
+        <Label x:Name="TitoloLabel" FontSize="24" FontAttributes="Bold" HorizontalOptions="Center" />
+        <Button Text="Nuova richiesta" Clicked="OnNuovaRichiestaClicked" />
+        <CollectionView x:Name="RichiesteCollectionView">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame BorderColor="Gray" CornerRadius="10" Padding="10" Margin="0,5">
+                        <VerticalStackLayout>
+                            <Label Text="{Binding MedicoNome}" FontAttributes="Bold" />
+                            <Label Text="Data: {Binding Data}" />
+                            <Label Text="Tipo: {Binding Tipo}" />
+                            <Label Text="Stato: {Binding Stato}" />
+                            <Label Text="Note: {Binding Note}" />
+                            <Label Text="Link video: {Binding LinkVideo}" IsVisible="{Binding IsTelevisita}" />
+                            <HorizontalStackLayout Spacing="10">
+                                <Button Text="Modifica" Clicked="OnModificaRichiestaClicked" CommandParameter="{Binding .}" />
+                                <Button Text="Elimina" Clicked="OnEliminaRichiestaClicked" CommandParameter="{Binding .}" />
+                            </HorizontalStackLayout>
+                        </VerticalStackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </VerticalStackLayout>
+</ContentPage>

@@ -29,8 +29,35 @@ namespace TeleCheckup.Views
                 return;
             }
 
-            await DisplayAlert("Registrazione", "Registrazione completata con successo.", "OK");
-            await Shell.Current.GoToAsync("//DashboardPage");
+            try
+            {
+                // Crea utente su Firebase Auth
+                var authResult = await Plugin.Firebase.Auth.CrossFirebaseAuth.Current.Instance.CreateUserWithEmailAndPasswordAsync(email, password);
+                var user = authResult.User;
+                if (user == null)
+                {
+                    await DisplayAlert("Errore", "Registrazione fallita.", "OK");
+                    return;
+                }
+
+                // Salva dati su Firestore
+                var firestore = Plugin.Firebase.Firestore.CrossFirebaseFirestore.Current.Instance;
+                var userDoc = firestore.Collection("utenti").Document(user.Uid);
+                await userDoc.SetAsync(new System.Collections.Generic.Dictionary<string, object>
+                {
+                    { "nome", name },
+                    { "email", email },
+                    { "ruolo", "paziente" },
+                    { "creatoIl", DateTime.UtcNow }
+                });
+
+                await DisplayAlert("Registrazione", "Registrazione completata con successo.", "OK");
+                await Shell.Current.GoToAsync("//DashboardPage");
+            }
+            catch (Exception ex)
+            {
+                await DisplayAlert("Errore", $"Registrazione fallita: {ex.Message}", "OK");
+            }
         }
     }
 }

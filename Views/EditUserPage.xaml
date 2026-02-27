@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TeleCheckup.Views.EditUserPage"
+             Title="Modifica Utente">
+    <VerticalStackLayout Padding="20" Spacing="15">
+        <Label Text="Modifica Utente" FontSize="24" FontAttributes="Bold" HorizontalOptions="Center" />
+        <Entry x:Name="NameEntry" Placeholder="Nome e Cognome" />
+        <Entry x:Name="EmailEntry" Placeholder="Email" Keyboard="Email" IsEnabled="False" />
+        <Picker x:Name="RolePicker" Title="Ruolo">
+            <Picker.ItemsSource>
+                <x:Array Type="x:String">
+                    <x:String>paziente</x:String>
+                    <x:String>medico</x:String>
+                    <x:String>admin</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+        <Button Text="Salva Modifiche" Clicked="OnSaveUserClicked" />
+    </VerticalStackLayout>
+</ContentPage>

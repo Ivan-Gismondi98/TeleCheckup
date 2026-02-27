@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "377043105630",
+    "project_id": "telecheckup-e136e",
+    "storage_bucket": "telecheckup-e136e.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:377043105630:android:29945dbb08549a001681cf",
+        "android_client_info": {
+          "package_name": "com.codigo.TeleCheckUp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCGkcbRSD1Q57Uj6e_FNLaAgSWUJqod0iM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -18,9 +18,14 @@ public static class MauiProgram
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
 			});
 
-#if DEBUG
+		#if DEBUG
 		builder.Logging.AddDebug();
-#endif
+		#endif
+
+		// Inizializza Firebase SOLO su Android
+		#if ANDROID
+		builder.UseFirebaseApp();
+		#endif
 
 		return builder.Build();
 	}

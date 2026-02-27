@@ -15,7 +15,7 @@ public partial class AdminDashboardPage : ContentPage
 
     private async void OnManageUsersClicked(object sender, EventArgs e)
     {
-        await DisplayAlert("Gestione Utenti", "Apri gestione utenti (placeholder).", "OK");
+        await Navigation.PushAsync(new ManageUsersPage());
     }
 
     private async void OnCrudBlogClicked(object sender, EventArgs e)
