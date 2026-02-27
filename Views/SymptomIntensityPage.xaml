@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TeleCheckup.Views.SymptomIntensityPage"
+             Title="Valuta Sintomo">
+
+    <VerticalStackLayout Padding="20" Spacing="20">
+        <Label x:Name="AreaLabel" Text="Area: --" FontSize="20" FontAttributes="Bold" HorizontalOptions="Center" />
+        <Label Text="Come valuteresti l'intensità e la natura del sintomo?" FontSize="14" HorizontalOptions="Center" TextColor="{StaticResource Gray500}" />
+
+        <Button Text="Lieve / Moderato" BackgroundColor="White" TextColor="{StaticResource SecondaryDarkText}" BorderColor="{StaticResource Secondary}" BorderWidth="2" CornerRadius="12" HeightRequest="60" Clicked="OnMildClicked" />
+        <Button Text="Grave / Acuto" BackgroundColor="White" TextColor="{StaticResource ElectricRed}" BorderColor="{StaticResource ElectricRed}" BorderWidth="2" CornerRadius="12" HeightRequest="60" Clicked="OnSevereClicked" />
+    </VerticalStackLayout>
+
+</ContentPage>

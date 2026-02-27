@@ -4,9 +4,80 @@
              x:Class="TeleCheckup.Views.DashboardPage"
              Title="Dashboard">
 
-    <VerticalStackLayout Padding="20" Spacing="15">
-        <Label Text="Dashboard" FontSize="24" FontAttributes="Bold" />
-        <Label Text="Benvenuto alla dashboard" />
-    </VerticalStackLayout>
+    <ScrollView>
+        <VerticalStackLayout Padding="16" Spacing="18">
+            <!-- Disponibilità -->
+            <Frame CornerRadius="12" HasShadow="True" Padding="12" BackgroundColor="White">
+                <HorizontalStackLayout VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+                    <VerticalStackLayout HorizontalOptions="StartAndExpand">
+                        <Label Text="La tua disponibilità" FontAttributes="Bold" FontSize="16" />
+                        <Label Text="I pazienti possono prenotare" FontSize="12" TextColor="{StaticResource Gray500}" />
+                    </VerticalStackLayout>
+                    <Switch IsToggled="True" HorizontalOptions="End" />
+                </HorizontalStackLayout>
+            </Frame>
+
+            <!-- Cards grid -->
+            <Grid ColumnSpacing="12" RowSpacing="12">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <Frame Grid.Row="0" Grid.Column="0" CornerRadius="12" BackgroundColor="White" Padding="12" HasShadow="True">
+                    <VerticalStackLayout>
+                        <Label Text="Agenda" FontAttributes="Bold" />
+                        <Label Text="Visite e Fisioterapie" FontSize="12" TextColor="{StaticResource Gray500}" />
+                    </VerticalStackLayout>
+                </Frame>
+
+                <Frame Grid.Row="0" Grid.Column="1" CornerRadius="12" BackgroundColor="White" Padding="12" HasShadow="True">
+                    <VerticalStackLayout>
+                        <Label Text="Chat Critiche" FontAttributes="Bold" />
+                        <Label Text="2 Pazienti in attesa" FontSize="12" TextColor="{StaticResource Gray500}" />
+                    </VerticalStackLayout>
+                </Frame>
+
+                <Frame Grid.Row="1" Grid.Column="0" CornerRadius="12" BackgroundColor="White" Padding="12" HasShadow="True">
+                    <VerticalStackLayout>
+                        <Label Text="Report IA" FontAttributes="Bold" />
+                        <Label Text="Resoconto settimanale" FontSize="12" TextColor="{StaticResource Gray500}" />
+                    </VerticalStackLayout>
+                </Frame>
+
+                <Frame Grid.Row="1" Grid.Column="1" CornerRadius="12" BackgroundColor="White" Padding="12" HasShadow="True">
+                    <VerticalStackLayout>
+                        <Label Text="Gestione Blog" FontAttributes="Bold" />
+                        <Label Text="I tuoi articoli" FontSize="12" TextColor="{StaticResource Gray500}" />
+                    </VerticalStackLayout>
+                </Frame>
+            </Grid>
+
+            <!-- Prossimi appuntamenti -->
+            <Label Text="Prossimi Appuntamenti (Oggi)" FontAttributes="Bold" FontSize="16" />
+            <VerticalStackLayout Spacing="10">
+                <Frame CornerRadius="8" Padding="10" BackgroundColor="White" HasShadow="True">
+                    <HorizontalStackLayout VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+                        <VerticalStackLayout HorizontalOptions="StartAndExpand">
+                            <Label Text="10:30 - Mario Rossi" FontAttributes="Bold" />
+                            <Label Text="Televisita di controllo" FontSize="12" TextColor="{StaticResource Gray500}" />
+                        </VerticalStackLayout>
+                        <Button Text="" BackgroundColor="{StaticResource Primary}" WidthRequest="40" HeightRequest="40" CornerRadius="20" />
+                    </HorizontalStackLayout>
+                </Frame>
+
+                <Frame CornerRadius="8" Padding="10" BackgroundColor="White" HasShadow="True">
+                    <VerticalStackLayout>
+                        <Label Text="11:45 - Luigi Verdi" FontAttributes="Bold" />
+                        <Label Text="Fisioterapia in studio" FontSize="12" TextColor="{StaticResource Gray500}" />
+                    </VerticalStackLayout>
+                </Frame>
+            </VerticalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
 
 </ContentPage>

@@ -78,6 +78,21 @@
         <MauiXaml Include="Resources/Styles/Styles.xaml" Inflator="Runtime" />
     </ItemGroup>
 
+    <ItemGroup>
+      <MauiXaml Update="Views\AiAdvicePage.xaml">
+        <Generator>MSBuild:Compile</Generator>
+      </MauiXaml>
+      <MauiXaml Update="Views\ChatPage.xaml">
+        <Generator>MSBuild:Compile</Generator>
+      </MauiXaml>
+      <MauiXaml Update="Views\RegisterPage.xaml">
+        <Generator>MSBuild:Compile</Generator>
+      </MauiXaml>
+      <MauiXaml Update="Views\SymptomIntensityPage.xaml">
+        <Generator>MSBuild:Compile</Generator>
+      </MauiXaml>
+    </ItemGroup>
+
     <!-- Individual Views do not need explicit MauiXaml Update entries.
          XAML SourceGen is enabled globally via <MauiXamlInflator>SourceGen</MauiXamlInflator> above.
          Removing the custom Generator metadata so files are processed by the MAUI XAML pipeline correctly. -->

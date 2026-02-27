@@ -4,9 +4,61 @@
              x:Class="TeleCheckup.Views.PharmaCheckerPage"
              Title="Pharma Checker">
 
-    <VerticalStackLayout Padding="20" Spacing="15">
-        <Label Text="Pharma Checker" FontSize="24" FontAttributes="Bold" />
-        <Label Text="Controlla informazioni farmaci" />
-    </VerticalStackLayout>
+    <ScrollView>
+        <VerticalStackLayout Padding="16" Spacing="16">
+            <Label Text="Pharma Checker" FontSize="20" FontAttributes="Bold" />
+            <Label Text="In che parte del corpo senti i sintomi?" FontSize="14" TextColor="{StaticResource Gray500}" />
+
+            <Frame CornerRadius="12" BackgroundColor="{StaticResource Gray100}" Padding="18" HasShadow="False">
+                <!-- Simplified body diagram with tappable points implemented as Frames with TapGestureRecognizers -->
+                <Grid HeightRequest="300">
+                    <!-- Body background (simplified) -->
+                    <BoxView Color="Transparent" />
+
+                    <!-- Head -->
+                    <Frame ClassId="Testa" WidthRequest="48" HeightRequest="48" CornerRadius="24" BackgroundColor="Transparent" HorizontalOptions="Center" VerticalOptions="Start">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnBodyPartTapped" />
+                        </Frame.GestureRecognizers>
+                        <BoxView WidthRequest="24" HeightRequest="24" CornerRadius="12" BackgroundColor="{StaticResource Secondary}" />
+                    </Frame>
+
+                    <!-- Chest -->
+                    <Frame ClassId="Torace" WidthRequest="48" HeightRequest="48" CornerRadius="24" BackgroundColor="Transparent" HorizontalOptions="Center" VerticalOptions="Center">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnBodyPartTapped" />
+                        </Frame.GestureRecognizers>
+                        <BoxView WidthRequest="24" HeightRequest="24" CornerRadius="12" BackgroundColor="{StaticResource Secondary}" />
+                    </Frame>
+
+                    <!-- Left arm -->
+                    <Frame ClassId="BraccioSinistro" WidthRequest="48" HeightRequest="48" CornerRadius="24" BackgroundColor="Transparent" HorizontalOptions="Start" VerticalOptions="Center" Margin="40,0,0,0">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnBodyPartTapped" />
+                        </Frame.GestureRecognizers>
+                        <BoxView WidthRequest="24" HeightRequest="24" CornerRadius="12" BackgroundColor="{StaticResource Secondary}" />
+                    </Frame>
+
+                    <!-- Right arm -->
+                    <Frame ClassId="BraccioDestro" WidthRequest="48" HeightRequest="48" CornerRadius="24" BackgroundColor="Transparent" HorizontalOptions="End" VerticalOptions="Center" Margin="0,0,40,0">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnBodyPartTapped" />
+                        </Frame.GestureRecognizers>
+                        <BoxView WidthRequest="24" HeightRequest="24" CornerRadius="12" BackgroundColor="{StaticResource Secondary}" />
+                    </Frame>
+
+                    <!-- Pelvis -->
+                    <Frame ClassId="Bacino" WidthRequest="48" HeightRequest="48" CornerRadius="24" BackgroundColor="Transparent" HorizontalOptions="Center" VerticalOptions="End" Margin="0,40,0,40">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnBodyPartTapped" />
+                        </Frame.GestureRecognizers>
+                        <BoxView WidthRequest="24" HeightRequest="24" CornerRadius="12" BackgroundColor="{StaticResource Secondary}" />
+                    </Frame>
+                </Grid>
+            </Frame>
+
+            <Label Text="Tocca i punti verdi per indicare la zona del dolore." FontSize="12" HorizontalOptions="Center" TextColor="{StaticResource Gray500}" />
+        </VerticalStackLayout>
+    </ScrollView>
 
 </ContentPage>

@@ -107,3 +107,29 @@ obj/**/designtime/**
 obj/**/lp/
 obj/**/lp/**
 
+# -----------------------------------------------------------------
+# Explicit ignores for build outputs (ensure folders from screenshots
+# like obj\Debug\net10.0-android and siblings are never committed)
+# -----------------------------------------------------------------
+
+# top-level build folders
+/bin/
+/obj/
+
+# debug/release folders
+obj/Debug/
+obj/Release/
+bin/Debug/
+bin/Release/
+
+# platform-specific build outputs (catch common MAUI TFMs)
+**/obj/**/net10.0-*/
+**/obj/**/net10.0-**/
+**/bin/**/net10.0-*/
+
+# If these folders were already tracked by git, remove them from the index:
+# git rm -r --cached obj bin
+# git commit -m "chore: remove build artifacts from repo"
+# git push
+
+

@@ -3,8 +3,45 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TeleCheckup.Views.DoctorDashboardPage"
              Title="Dashboard Medico">
-    <VerticalStackLayout Padding="20">
-        <Label Text="Dashboard Medico" FontSize="24" FontAttributes="Bold" />
-        <Label Text="Questa è una pagina di esempio." />
-    </VerticalStackLayout>
+    <ScrollView>
+        <VerticalStackLayout Padding="16" Spacing="18">
+            <Label Text="I tuoi servizi" FontSize="20" FontAttributes="Bold" TextColor="{StaticResource Primary}" />
+
+            <Grid ColumnSpacing="12" RowSpacing="12">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <Frame Grid.Row="0" Grid.Column="0" CornerRadius="12" BackgroundColor="White" Padding="18" HasShadow="True">
+                    <VerticalStackLayout HorizontalOptions="Center">
+                        <Label Text="Televisita" FontAttributes="Bold" HorizontalOptions="Center" />
+                    </VerticalStackLayout>
+                </Frame>
+
+                <Frame Grid.Row="0" Grid.Column="1" CornerRadius="12" BackgroundColor="White" Padding="18" HasShadow="True">
+                    <VerticalStackLayout HorizontalOptions="Center">
+                        <Label Text="Visite &amp; Esami" FontAttributes="Bold" HorizontalOptions="Center" />
+                    </VerticalStackLayout>
+                </Frame>
+            </Grid>
+
+            <Frame CornerRadius="12" BackgroundColor="#0F1724" Padding="14" HasShadow="True">
+                <VerticalStackLayout>
+                    <Label Text="Pharma Checker" TextColor="White" FontAttributes="Bold" />
+                    <Label Text="Individua il dolore sul corpo" TextColor="White" FontSize="12" />
+                </VerticalStackLayout>
+            </Frame>
+
+            <Frame CornerRadius="12" BackgroundColor="White" Padding="12" HasShadow="True">
+                <VerticalStackLayout>
+                    <Label Text="Blog Salute" FontAttributes="Bold" />
+                    <Label Text="News e articoli medici" FontSize="12" TextColor="{StaticResource Gray500}" />
+                </VerticalStackLayout>
+            </Frame>
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

@@ -4,17 +4,31 @@
              x:Class="TeleCheckup.Views.LoginPage"
              BackgroundColor="#0033FF">
 
-    <VerticalStackLayout VerticalOptions="Center" Padding="30" Spacing="25">
-        <Label Text="TELE CHECKUP" FontSize="36" FontAttributes="Bold" TextColor="White" HorizontalOptions="Center" />
-        <Label Text="La tua salute, ovunque tu sia." FontSize="16" TextColor="#E0E7FF" HorizontalOptions="Center" Margin="0,0,0,20"/>
+    <VerticalStackLayout VerticalOptions="Center" Padding="30" Spacing="20">
+        <!-- Icon -->
+        <Frame WidthRequest="96" HeightRequest="96" CornerRadius="48" BackgroundColor="White" HorizontalOptions="Center" HasShadow="True">
+            <Label Text="" HorizontalOptions="Center" VerticalOptions="Center" FontSize="36" TextColor="{StaticResource Primary}" />
+        </Frame>
 
-        <Frame BackgroundColor="White" CornerRadius="20" Padding="25" HasShadow="True">
-            <VerticalStackLayout Spacing="15">
-                <Label Text="Accedi per continuare" FontSize="18" FontAttributes="Bold" TextColor="#1A1A1A" HorizontalOptions="Center" Margin="0,0,0,10"/>
-                
-                <Button Text="Accedi come Paziente" BackgroundColor="#0033FF" TextColor="White" CornerRadius="12" HeightRequest="50" FontAttributes="Bold" Clicked="OnPatientClicked"/>
-                <Button Text="Accedi come Medico" BackgroundColor="#EFFF00" TextColor="#1A1A1A" CornerRadius="12" HeightRequest="50" FontAttributes="Bold" />
-                <Button Text="Accedi come Admin" BackgroundColor="#FF0033" TextColor="White" CornerRadius="12" HeightRequest="50" FontAttributes="Bold" />
+        <Label Text="TELE CHECKUP" Style="{StaticResource Headline}" />
+        <Label Text="La tua salute, ovunque tu sia." Style="{StaticResource SubHeadline}" FontSize="14" />
+
+        <Frame BackgroundColor="White" CornerRadius="20" Padding="20" HasShadow="True">
+            <VerticalStackLayout Spacing="14">
+                <Label Text="Accedi per continuare" FontSize="18" FontAttributes="Bold" TextColor="#1A1A1A" HorizontalOptions="Center" />
+
+                <Button Text="Accedi come Paziente" BackgroundColor="{StaticResource Primary}" TextColor="White" CornerRadius="20" HeightRequest="48" FontAttributes="Bold" Clicked="OnPatientClicked" />
+                <Button Text="Accedi come Medico" BackgroundColor="{StaticResource NeonYellow}" TextColor="#1A1A1A" CornerRadius="20" HeightRequest="48" FontAttributes="Bold" Clicked="OnDoctorClicked" />
+                <Button Text="Accedi come Admin" BackgroundColor="{StaticResource ElectricRed}" TextColor="White" CornerRadius="20" HeightRequest="48" FontAttributes="Bold" Clicked="OnAdminClicked" />
+
+                <HorizontalStackLayout HorizontalOptions="Center" Padding="0,6,0,0">
+                    <Label Text="Nuovo utente?" TextColor="White" />
+                    <Label Text=" Registrati" TextColor="White" FontAttributes="Bold" TextDecorations="Underline">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnRegisterClicked" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                </HorizontalStackLayout>
             </VerticalStackLayout>
         </Frame>
     </VerticalStackLayout>
