@@ -1,27 +1,25 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="[http://schemas.microsoft.com/dotnet/2021/maui](http://schemas.microsoft.com/dotnet/2021/maui)"
-             xmlns:x="[http://schemas.microsoft.com/winfx/2009/xaml](http://schemas.microsoft.com/winfx/2009/xaml)"
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TeleCheckup.Views.VideoCallPage"
-             Title="Televisita in corso"
+             Title="Televisita in Corso"
+             Shell.NavBarIsVisible="False"
              Shell.TabBarIsVisible="False">
 
     <Grid>
-        <!-- Inserisci qui l'URL della tua web app che gestisce il WebRTC -->
-        <WebView x:Name="VideoCallWebView" 
-                 Source="[https://meet.jit.si/TeleCheckup_StanzaSicura_123](https://meet.jit.si/TeleCheckup_StanzaSicura_123)" 
-                 HorizontalOptions="FillAndExpand" 
-                 VerticalOptions="FillAndExpand" />
-                 
-        <!-- Tasto emergenza / chiudi -->
+        <!-- WebView per WebRTC (es. Jitsi) -->
+        <WebView Source="https://meet.jit.si/TeleCheckup_StanzaSicura_123" HorizontalOptions="Fill" VerticalOptions="Fill" />
+        
+        <!-- Pulsante fluttuante per chiudere la chiamata -->
         <Button Text="Chiudi Chiamata" 
-                BackgroundColor="{StaticResource ElectricRed}" 
-                TextColor="White"
-                CornerRadius="25"
-                WidthRequest="200"
-                HeightRequest="50"
-                VerticalOptions="End" 
-                Margin="0,0,0,30"
-                Clicked="OnEndCallClicked" />
+            BackgroundColor="#FF0033" 
+            TextColor="White" 
+            CornerRadius="25" 
+            WidthRequest="200" 
+            HeightRequest="50" 
+            VerticalOptions="End" 
+            Margin="0,0,0,40" 
+            FontAttributes="Bold"
+            Clicked="OnEndCallClicked"/>
     </Grid>
-
 </ContentPage>

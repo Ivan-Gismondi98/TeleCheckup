@@ -1,15 +1,39 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
 <ResourceDictionary 
-    xmlns="[http://schemas.microsoft.com/dotnet/2021/maui](http://schemas.microsoft.com/dotnet/2021/maui)"
-    xmlns:x="[http://schemas.microsoft.com/winfx/2009/xaml](http://schemas.microsoft.com/winfx/2009/xaml)">
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
 
-    <!-- La tua Palette Colori -->
-    <Color x:Key="ElectricBlue">#0033FF</Color>
+    <!-- La tua Palette Colori - aggiunte chiavi usate in Styles.xaml -->
+    <Color x:Key="Primary">#0033FF</Color>
+    <Color x:Key="PrimaryDark">#0022CC</Color>
+    <Color x:Key="PrimaryDarkText">#1A1A1A</Color>
     <Color x:Key="White">#FFFFFF</Color>
+    <Color x:Key="Black">#000000</Color>
+
+    <Color x:Key="Secondary">#39FF14</Color>
     <Color x:Key="ElectricRed">#FF0033</Color>
     <Color x:Key="NeonYellow">#EFFF00</Color>
-    <Color x:Key="NeonGreen">#39FF14</Color>
+
+    <!-- Midnight / headline colors -->
+    <Color x:Key="MidnightBlue">#001F5B</Color>
+
+    <!-- Grays (light -> dark) -->
+    <Color x:Key="Gray100">#F3F4F6</Color>
+    <Color x:Key="Gray200">#E5E7EB</Color>
+    <Color x:Key="Gray300">#D1D5DB</Color>
+    <Color x:Key="Gray400">#9CA3AF</Color>
+    <Color x:Key="Gray500">#6B7280</Color>
+    <Color x:Key="Gray600">#4B5563</Color>
+    <Color x:Key="Gray900">#111827</Color>
+    <Color x:Key="Gray950">#0B1220</Color>
+
+    <!-- Utility colors -->
     <Color x:Key="DarkText">#1A1A1A</Color>
     <Color x:Key="GrayBg">#F3F4F6</Color>
+    
+    <!-- Additional keys referenced by Styles.xaml -->
+    <Color x:Key="OffBlack">#0A0A0A</Color>
+    <Color x:Key="SecondaryDarkText">#E5E7EB</Color>
+    <Color x:Key="Magenta">#FF00A8</Color>
 
 </ResourceDictionary>

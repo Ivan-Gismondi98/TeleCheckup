@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="[http://schemas.microsoft.com/dotnet/2021/maui](http://schemas.microsoft.com/dotnet/2021/maui)"
-             xmlns:x="[http://schemas.microsoft.com/winfx/2009/xaml](http://schemas.microsoft.com/winfx/2009/xaml)"
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TeleCheckup.Views.LoginPage"
-             BackgroundColor="{StaticResource ElectricBlue}">
+             BackgroundColor="#0033FF">
 
-    <VerticalStackLayout Spacing="25" Padding="30" VerticalOptions="Center">
+    <VerticalStackLayout VerticalOptions="Center" Padding="30" Spacing="25">
+        <Label Text="TELE CHECKUP" FontSize="36" FontAttributes="Bold" TextColor="White" HorizontalOptions="Center" />
+        <Label Text="La tua salute, ovunque tu sia." FontSize="16" TextColor="#E0E7FF" HorizontalOptions="Center" Margin="0,0,0,20"/>
 
-        <Label Text="TELE CHECKUP" FontSize="36" FontAttributes="Bold" TextColor="{StaticResource White}" HorizontalOptions="Center" />
-        <Label Text="La tua salute, ovunque tu sia." FontSize="16" TextColor="LightCyan" HorizontalOptions="Center" Margin="0,0,0,30"/>
-
-        <Frame BackgroundColor="{StaticResource White}" CornerRadius="20" Padding="20" HasShadow="True">
+        <Frame BackgroundColor="White" CornerRadius="20" Padding="25" HasShadow="True">
             <VerticalStackLayout Spacing="15">
-                <!-- Simulazione Accessi -->
-                <Button Text="Accedi come Paziente" BackgroundColor="{StaticResource ElectricBlue}" TextColor="White" CornerRadius="10" Clicked="OnPatientLoginClicked"/>
-                <Button Text="Accedi come Medico" BackgroundColor="{StaticResource NeonYellow}" TextColor="{StaticResource DarkText}" CornerRadius="10" Clicked="OnDoctorLoginClicked"/>
-                <Button Text="Accedi come Admin" BackgroundColor="{StaticResource ElectricRed}" TextColor="White" CornerRadius="10" Clicked="OnAdminLoginClicked"/>
+                <Label Text="Accedi per continuare" FontSize="18" FontAttributes="Bold" TextColor="#1A1A1A" HorizontalOptions="Center" Margin="0,0,0,10"/>
+                
+                <Button Text="Accedi come Paziente" BackgroundColor="#0033FF" TextColor="White" CornerRadius="12" HeightRequest="50" FontAttributes="Bold" Clicked="OnPatientClicked"/>
+                <Button Text="Accedi come Medico" BackgroundColor="#EFFF00" TextColor="#1A1A1A" CornerRadius="12" HeightRequest="50" FontAttributes="Bold" />
+                <Button Text="Accedi come Admin" BackgroundColor="#FF0033" TextColor="White" CornerRadius="12" HeightRequest="50" FontAttributes="Bold" />
             </VerticalStackLayout>
         </Frame>
-
     </VerticalStackLayout>
 </ContentPage>

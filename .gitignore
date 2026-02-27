@@ -1,0 +1,109 @@
+# .gitignore for .NET MAUI project
+
+# Build outputs
+/bin/
+/obj/
+**/bin/
+**/obj/
+
+# Visual Studio
+.vs/
+.vs/**
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Rider
+.idea/
+*.sln.iml
+
+# VS Code
+.vscode/
+
+# macOS
+.DS_Store
+
+# Debugger / VS Debugger temp
+.vsdbg
+
+# NuGet packages
+*.nupkg
+packages/
+
+# Logs
+*.log
+
+# ReSharper
+_ReSharper*/
+
+# Generated SourceGen files (MAUI)
+**/Microsoft.Maui.Controls.SourceGen/
+**/Microsoft.Maui.Controls.SourceGen/**
+
+# Android specific
+**/android/obj/
+**/android/bin/
+**/bin/Debug/android/
+**/bin/Release/android/
+
+# iOS / MacCatalyst
+**/ios/obj/
+**/ios/bin/
+**/maccatalyst/obj/
+**/maccatalyst/bin/
+
+# Windows
+**/win*/obj/
+**/win*/bin/
+
+# Design-time and layout preview folders
+**/designtime/
+**/designtime/**
+
+# lp folders (localization / generated)
+**/lp/
+**/lp/**
+
+# Generated and intermediate files
+obj/**/generated/
+*.g.cs
+*.g.i.cs
+*.Designer.cs
+
+# User secrets / env
+secrets.json
+.env
+*.env
+
+# Misc
+*.log
+*.tmp
+
+# Keep node modules out if present
+node_modules/
+
+# Ignore package lock files if you don't want them tracked
+# package-lock.json
+
+# Uncomment to ignore everything and then whitelist required files
+#*
+
+# -----------------------------------------------------------------
+# MAUI / Android generated build artifacts (explicit for screenshot)
+# These folders appear under obj/Debug/net10.0-android and contain
+# designtime, lp, res.zip and other generated files we don't want in git
+# -----------------------------------------------------------------
+obj/Debug/net10.0-android/
+obj/Debug/net10.0-android/**
+obj/**/net10.0-android/
+obj/**/net10.0-android/**
+
+# Design-time preview folders (may appear under obj/...)
+obj/**/designtime/
+obj/**/designtime/**
+
+# 'lp' folders with generated resources (e.g. 100\jl, 103\jl...)
+obj/**/lp/
+obj/**/lp/**
+

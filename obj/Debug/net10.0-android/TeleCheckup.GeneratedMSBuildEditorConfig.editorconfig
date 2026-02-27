@@ -9,6 +9,7 @@ build_property.MauiXamlNoWarn =
 build_property.EnableMauiXamlDiagnostics = true
 build_property.MauiXamlLineInfo = 
 build_property.Configuration = Debug
+build_property.EnablePreviewFeatures = 
 build_property.MvvmToolkitEnableINotifyPropertyChangingSupport = true
 build_property._MvvmToolkitIsUsingWindowsRuntimePack = false
 build_property.CsWinRTComponent = 
@@ -63,22 +64,38 @@ build_metadata.AdditionalFiles.LineInfo =
 
 [T:/App/TeleCheckup/Resources/Styles/Colors.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = TeleCheckup.Resources.Styles.Colors.xaml
 build_metadata.AdditionalFiles.ManifestResourceName = TeleCheckup.Resources.Styles.Colors.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Colors.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources/Styles/Colors.xaml
 build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Colors.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources/Styles/Colors.xaml
 build_metadata.AdditionalFiles.Inflator = SourceGen
+build_metadata.AdditionalFiles.Inflator = Runtime
+build_metadata.AdditionalFiles.NoWarn = 
 build_metadata.AdditionalFiles.NoWarn = 
 build_metadata.AdditionalFiles.EnableDiagnostics = 
+build_metadata.AdditionalFiles.EnableDiagnostics = 
+build_metadata.AdditionalFiles.LineInfo = 
 build_metadata.AdditionalFiles.LineInfo = 
 
 [T:/App/TeleCheckup/Resources/Styles/Styles.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = TeleCheckup.Resources.Styles.Styles.xaml
 build_metadata.AdditionalFiles.ManifestResourceName = TeleCheckup.Resources.Styles.Styles.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources/Styles/Styles.xaml
 build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources/Styles/Styles.xaml
 build_metadata.AdditionalFiles.Inflator = SourceGen
+build_metadata.AdditionalFiles.Inflator = Runtime
+build_metadata.AdditionalFiles.NoWarn = 
 build_metadata.AdditionalFiles.NoWarn = 
 build_metadata.AdditionalFiles.EnableDiagnostics = 
+build_metadata.AdditionalFiles.EnableDiagnostics = 
+build_metadata.AdditionalFiles.LineInfo = 
 build_metadata.AdditionalFiles.LineInfo = 
 
 [T:/App/TeleCheckup/Views/AdminDashboardPage.xaml]
@@ -86,6 +103,16 @@ build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = TeleCheckup.Views.AdminDashboardPage.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\AdminDashboardPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\AdminDashboardPage.xaml
+build_metadata.AdditionalFiles.Inflator = SourceGen
+build_metadata.AdditionalFiles.NoWarn = 
+build_metadata.AdditionalFiles.EnableDiagnostics = 
+build_metadata.AdditionalFiles.LineInfo = 
+
+[T:/App/TeleCheckup/Views/DashboardPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = TeleCheckup.Views.DashboardPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\DashboardPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\DashboardPage.xaml
 build_metadata.AdditionalFiles.Inflator = SourceGen
 build_metadata.AdditionalFiles.NoWarn = 
 build_metadata.AdditionalFiles.EnableDiagnostics = 
@@ -116,6 +143,16 @@ build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = TeleCheckup.Views.PatientDashboardPage.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\PatientDashboardPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\PatientDashboardPage.xaml
+build_metadata.AdditionalFiles.Inflator = SourceGen
+build_metadata.AdditionalFiles.NoWarn = 
+build_metadata.AdditionalFiles.EnableDiagnostics = 
+build_metadata.AdditionalFiles.LineInfo = 
+
+[T:/App/TeleCheckup/Views/PharmaCheckerPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = TeleCheckup.Views.PharmaCheckerPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\PharmaCheckerPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\PharmaCheckerPage.xaml
 build_metadata.AdditionalFiles.Inflator = SourceGen
 build_metadata.AdditionalFiles.NoWarn = 
 build_metadata.AdditionalFiles.EnableDiagnostics = 
