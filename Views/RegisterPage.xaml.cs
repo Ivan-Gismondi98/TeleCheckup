@@ -32,7 +32,7 @@ namespace TeleCheckup.Views
             try
             {
                 // Crea utente su Firebase Auth
-                var authResult = await Plugin.Firebase.Auth.CrossFirebaseAuth.Current.Instance.CreateUserWithEmailAndPasswordAsync(email, password);
+                var authResult = await Plugin.Firebase.Auth.CrossFirebaseAuth.Current.CreateUserWithEmailAndPasswordAsync(email, password);
                 var user = authResult.User;
                 if (user == null)
                 {
@@ -41,7 +41,7 @@ namespace TeleCheckup.Views
                 }
 
                 // Salva dati su Firestore
-                var firestore = Plugin.Firebase.Firestore.CrossFirebaseFirestore.Current.Instance;
+                var firestore = Plugin.Firebase.Firestore.CrossFirebaseFirestore.Current;
                 var userDoc = firestore.Collection("utenti").Document(user.Uid);
                 await userDoc.SetAsync(new System.Collections.Generic.Dictionary<string, object>
                 {

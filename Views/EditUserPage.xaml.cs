@@ -11,6 +11,7 @@ namespace TeleCheckup.Views
         public EditUserPage(UserModel user)
         {
             InitializeComponent();
+            RolePicker.ItemsSource = new System.Collections.Generic.List<string> { "paziente", "medico", "admin" };
             _user = user;
             NameEntry.Text = user.nome;
             EmailEntry.Text = user.email;

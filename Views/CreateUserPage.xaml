@@ -8,15 +8,7 @@
         <Entry x:Name="NameEntry" Placeholder="Nome e Cognome" />
         <Entry x:Name="EmailEntry" Placeholder="Email" Keyboard="Email" />
         <Entry x:Name="PasswordEntry" Placeholder="Password" IsPassword="True" />
-        <Picker x:Name="RolePicker" Title="Ruolo">
-            <Picker.ItemsSource>
-                <x:Array Type="x:String">
-                    <x:String>paziente</x:String>
-                    <x:String>medico</x:String>
-                    <x:String>admin</x:String>
-                </x:Array>
-            </Picker.ItemsSource>
-        </Picker>
+        <Picker x:Name="RolePicker" Title="Ruolo" />
         <Button Text="Crea Utente" Clicked="OnCreateUserSubmit" />
     </VerticalStackLayout>
 </ContentPage>

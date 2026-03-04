@@ -32,13 +32,13 @@ namespace TeleCheckup.Views
         {
             string email = await Application.Current.MainPage.DisplayPromptAsync($"Login {ruolo}", "Inserisci email:");
             if (string.IsNullOrWhiteSpace(email)) return;
-            string password = await Application.Current.MainPage.DisplayPromptAsync($"Login {ruolo}", "Inserisci password:", "OK", "Annulla", "", -1, true);
+            string password = await Application.Current.MainPage.DisplayPromptAsync($"Login {ruolo}", "Inserisci password:", "OK", "Annulla", "", -1, Keyboard.Default);
             if (string.IsNullOrWhiteSpace(password)) return;
 
             try
             {
                 // Autenticazione Firebase
-                var authResult = await Plugin.Firebase.Auth.CrossFirebaseAuth.Current.Instance.SignInWithEmailAndPasswordAsync(email, password);
+                var authResult = await Plugin.Firebase.Auth.CrossFirebaseAuth.Current.SignInWithEmailAndPasswordAsync(email, password);
                 var user = authResult.User;
                 if (user == null)
                 {
@@ -47,7 +47,7 @@ namespace TeleCheckup.Views
                 }
 
                 // Recupera ruolo da Firestore (o da custom claim, qui esempio Firestore)
-                var firestore = Plugin.Firebase.Firestore.CrossFirebaseFirestore.Current.Instance;
+                var firestore = Plugin.Firebase.Firestore.CrossFirebaseFirestore.Current;
                 var doc = await firestore.Collection("utenti").Document(user.Uid).GetAsync();
                 if (!doc.Exists)
                 {

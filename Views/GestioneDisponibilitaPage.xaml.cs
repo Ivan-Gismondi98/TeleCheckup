@@ -1,5 +1,8 @@
 using System;
 using System.Collections.ObjectModel;
+using System.Collections.Generic;
+using System.Globalization;
+using System.Linq;
 using Microsoft.Maui.Controls;
 
 namespace TeleCheckup.Views
@@ -16,10 +19,10 @@ namespace TeleCheckup.Views
 
         private async void LoadDisponibilita()
         {
-            var auth = Plugin.Firebase.Auth.CrossFirebaseAuth.Current.Instance;
+            var auth = Plugin.Firebase.Auth.CrossFirebaseAuth.Current;
             var medicoId = auth.CurrentUser?.Uid;
             if (string.IsNullOrWhiteSpace(medicoId)) return;
-            var firestore = Plugin.Firebase.Firestore.CrossFirebaseFirestore.Current.Instance;
+            var firestore = Plugin.Firebase.Firestore.CrossFirebaseFirestore.Current;
             var doc = await firestore.Collection("disponibilita_medici").Document(medicoId).GetAsync();
             Intervalli.Clear();
             if (doc.Exists)
@@ -52,14 +55,14 @@ namespace TeleCheckup.Views
                 await DisplayAlert("Errore", "La data di inizio deve essere prima della data di fine.", "OK");
                 return;
             }
-            var nuovo = new IntervalloDisponibilita { Start = start.ToString("yyyy-MM-dd"), End = end.ToString("yyyy-MM-dd") };
+            var nuovo = new IntervalloDisponibilita { Start = Convert.ToDateTime(start).ToString("yyyy-MM-dd"), End = Convert.ToDateTime(end).ToString("yyyy-MM-dd") };
             Intervalli.Add(nuovo);
 
             // Salva su Firestore
-            var auth = Plugin.Firebase.Auth.CrossFirebaseAuth.Current.Instance;
+            var auth = Plugin.Firebase.Auth.CrossFirebaseAuth.Current;
             var medicoId = auth.CurrentUser?.Uid;
             if (string.IsNullOrWhiteSpace(medicoId)) return;
-            var firestore = Plugin.Firebase.Firestore.CrossFirebaseFirestore.Current.Instance;
+            var firestore = Plugin.Firebase.Firestore.CrossFirebaseFirestore.Current;
             var intervalliFirestore = Intervalli.Select(i => new Dictionary<string, object>
             {
                 { "start", i.Start },
@@ -76,10 +79,10 @@ namespace TeleCheckup.Views
                 Intervalli.Remove(intervallo);
 
                 // Aggiorna Firestore
-                var auth = Plugin.Firebase.Auth.CrossFirebaseAuth.Current.Instance;
+                var auth = Plugin.Firebase.Auth.CrossFirebaseAuth.Current;
                 var medicoId = auth.CurrentUser?.Uid;
                 if (string.IsNullOrWhiteSpace(medicoId)) return;
-                var firestore = Plugin.Firebase.Firestore.CrossFirebaseFirestore.Current.Instance;
+                var firestore = Plugin.Firebase.Firestore.CrossFirebaseFirestore.Current;
                 var intervalliFirestore = Intervalli.Select(i => new Dictionary<string, object>
                 {
                     { "start", i.Start },

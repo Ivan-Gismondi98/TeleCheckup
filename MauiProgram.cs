@@ -1,6 +1,7 @@
 ﻿
 using CommunityToolkit.Maui;
 using Microsoft.Extensions.Logging;
+using TeleCheckup.Extensions;
 
 namespace TeleCheckup;
 

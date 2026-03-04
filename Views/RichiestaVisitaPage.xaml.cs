@@ -10,12 +10,16 @@ namespace TeleCheckup.Views
         public RichiestaVisitaPage()
         {
             InitializeComponent();
+            TipoVisitaPicker.ItemsSource = new System.Collections.Generic.List<string>
+            {
+                "Cardiologica", "Odontoiatrica", "Fisioterapica", "Analisi del sangue"
+            };
             LoadMedici();
         }
 
         private async void LoadMedici()
         {
-            var firestore = Plugin.Firebase.Firestore.CrossFirebaseFirestore.Current.Instance;
+            var firestore = Plugin.Firebase.Firestore.CrossFirebaseFirestore.Current;
             var mediciSnapshot = await firestore.Collection("utenti").WhereEqualTo("ruolo", "medico").GetAsync();
             var mediciList = mediciSnapshot.Documents
                 .Select(doc => new MedicoModel {
@@ -46,7 +50,7 @@ namespace TeleCheckup.Views
             }
 
             // Verifica disponibilità medico
-            var firestore = Plugin.Firebase.Firestore.CrossFirebaseFirestore.Current.Instance;
+            var firestore = Plugin.Firebase.Firestore.CrossFirebaseFirestore.Current;
             var dispDoc = await firestore.Collection("disponibilita_medici").Document(medico.Id).GetAsync();
             bool disponibile = false;
             if (dispDoc.Exists)
@@ -77,7 +81,7 @@ namespace TeleCheckup.Views
             }
 
             // Recupera UID paziente (utente loggato)
-            var auth = Plugin.Firebase.Auth.CrossFirebaseAuth.Current.Instance;
+            var auth = Plugin.Firebase.Auth.CrossFirebaseAuth.Current;
             var pazienteId = auth.CurrentUser?.Uid;
             if (string.IsNullOrWhiteSpace(pazienteId))
             {

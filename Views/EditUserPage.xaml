@@ -7,15 +7,7 @@
         <Label Text="Modifica Utente" FontSize="24" FontAttributes="Bold" HorizontalOptions="Center" />
         <Entry x:Name="NameEntry" Placeholder="Nome e Cognome" />
         <Entry x:Name="EmailEntry" Placeholder="Email" Keyboard="Email" IsEnabled="False" />
-        <Picker x:Name="RolePicker" Title="Ruolo">
-            <Picker.ItemsSource>
-                <x:Array Type="x:String">
-                    <x:String>paziente</x:String>
-                    <x:String>medico</x:String>
-                    <x:String>admin</x:String>
-                </x:Array>
-            </Picker.ItemsSource>
-        </Picker>
+        <Picker x:Name="RolePicker" Title="Ruolo" />
         <Button Text="Salva Modifiche" Clicked="OnSaveUserClicked" />
     </VerticalStackLayout>
 </ContentPage>

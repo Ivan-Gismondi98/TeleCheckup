@@ -5,8 +5,10 @@
              Title="Gestione Disponibilità">
     <VerticalStackLayout Padding="20" Spacing="15">
         <Label Text="Gestione Disponibilità" FontSize="24" FontAttributes="Bold" HorizontalOptions="Center" />
-        <DatePicker x:Name="StartDatePicker" Title="Data inizio" />
-        <DatePicker x:Name="EndDatePicker" Title="Data fine" />
+        <Label Text="Data inizio" />
+        <DatePicker x:Name="StartDatePicker" />
+        <Label Text="Data fine" />
+        <DatePicker x:Name="EndDatePicker" />
         <Button Text="Aggiungi intervallo" Clicked="OnAggiungiIntervalloClicked" />
         <Label Text="Intervalli disponibili:" FontAttributes="Bold" />
         <CollectionView x:Name="IntervalliCollectionView">

@@ -6,16 +6,7 @@
     <VerticalStackLayout Padding="20" Spacing="15">
         <Label Text="Modifica richiesta di visita" FontSize="24" FontAttributes="Bold" HorizontalOptions="Center" />
         <DatePicker x:Name="DataPicker" />
-        <Picker x:Name="TipoVisitaPicker" Title="Tipo Visita">
-            <Picker.ItemsSource>
-                <x:Array Type="x:String">
-                    <x:String>Cardiologica</x:String>
-                    <x:String>Odontoiatrica</x:String>
-                    <x:String>Fisioterapica</x:String>
-                    <x:String>Analisi del sangue</x:String>
-                </x:Array>
-            </Picker.ItemsSource>
-        </Picker>
+        <Picker x:Name="TipoVisitaPicker" Title="Tipo Visita" />
         <Entry x:Name="NoteEntry" Placeholder="Note aggiuntive" />
         <Button Text="Salva Modifiche" Clicked="OnSalvaModificheClicked" />
     </VerticalStackLayout>

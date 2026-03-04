@@ -10,6 +10,10 @@ namespace TeleCheckup.Views
         public ModificaRichiestaPage(RichiestaVisitaModel richiesta)
         {
             InitializeComponent();
+            TipoVisitaPicker.ItemsSource = new System.Collections.Generic.List<string>
+            {
+                "Cardiologica", "Odontoiatrica", "Fisioterapica", "Analisi del sangue"
+            };
             _richiesta = richiesta;
             DataPicker.Date = DateTime.TryParse(richiesta.Data, out var d) ? d : DateTime.Today;
             TipoVisitaPicker.SelectedItem = richiesta.TipoVisita;
@@ -26,7 +30,7 @@ namespace TeleCheckup.Views
                 await DisplayAlert("Errore", "Seleziona il tipo di visita.", "OK");
                 return;
             }
-            var firestore = Plugin.Firebase.Firestore.CrossFirebaseFirestore.Current.Instance;
+            var firestore = Plugin.Firebase.Firestore.CrossFirebaseFirestore.Current;
             await firestore.Collection("richieste_visite").Document(_richiesta.Id)
                 .UpdateAsync(new System.Collections.Generic.Dictionary<string, object>
                 {

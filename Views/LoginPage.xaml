@@ -22,8 +22,9 @@
                 <Button Text="Accedi come Admin" BackgroundColor="{StaticResource ElectricRed}" TextColor="White" CornerRadius="20" HeightRequest="48" FontAttributes="Bold" Clicked="OnAdminClicked" />
 
                 <HorizontalStackLayout HorizontalOptions="Center" Padding="0,6,0,0">
-                    <Label Text="Nuovo utente?" TextColor="White" />
-                    <Label Text=" Registrati" TextColor="White" FontAttributes="Bold" TextDecorations="Underline">
+                    <!-- Text is on a white frame background, use dark color so it's visible -->
+                    <Label Text="Nuovo utente?" TextColor="#1A1A1A" />
+                    <Label Text=" Registrati" TextColor="#1A1A1A" FontAttributes="Bold" TextDecorations="Underline">
                         <Label.GestureRecognizers>
                             <TapGestureRecognizer Tapped="OnRegisterClicked" />
                         </Label.GestureRecognizers>

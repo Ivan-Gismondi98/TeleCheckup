@@ -7,16 +7,7 @@
         <Label Text="Richiedi una visita" FontSize="24" FontAttributes="Bold" HorizontalOptions="Center" />
         <Picker x:Name="MedicoPicker" Title="Seleziona Medico" />
         <DatePicker x:Name="DataPicker" MinimumDate="2026-03-01" MaximumDate="2027-03-01" />
-        <Picker x:Name="TipoVisitaPicker" Title="Tipo Visita">
-            <Picker.ItemsSource>
-                <x:Array Type="x:String">
-                    <x:String>Cardiologica</x:String>
-                    <x:String>Odontoiatrica</x:String>
-                    <x:String>Fisioterapica</x:String>
-                    <x:String>Analisi del sangue</x:String>
-                </x:Array>
-            </Picker.ItemsSource>
-        </Picker>
+        <Picker x:Name="TipoVisitaPicker" Title="Tipo Visita" />
         <Entry x:Name="NoteEntry" Placeholder="Note aggiuntive" />
         <Button Text="Invia Richiesta" Clicked="OnInviaRichiestaClicked" />
     </VerticalStackLayout>

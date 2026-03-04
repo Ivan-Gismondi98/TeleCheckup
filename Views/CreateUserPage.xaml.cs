@@ -10,6 +10,7 @@ namespace TeleCheckup.Views
         public CreateUserPage()
         {
             InitializeComponent();
+            RolePicker.ItemsSource = new System.Collections.Generic.List<string> { "paziente", "medico", "admin" };
             RolePicker.SelectedIndex = 0;
         }
 
